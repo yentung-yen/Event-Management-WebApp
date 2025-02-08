@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <title>Event Details Page</title>
+</head>
+
+<body>
+    <div class="album py-5">
+        <div class="container">
+
+            <div class="rounded py-5">
+                <h3 class="my-4">Event Detail Page</h3>
+                <img src={{image}} width="1500" class="img-fluid"/>
+            </div>
+
+            <div class="row row-cols-1 g-3">
+
+                <div class="container px-lg-3">
+                    <div class="p-4 p-lg-5 bg-dark rounded-3">
+                        <div class="m-4 m-lg-5 ">
+
+                            <h1 class="display-5 fw-bold text-white pb-4 text-center">{{name}}</h1>
+                            
+                            <h1 class="display-5 fw-bold text-white fs-5">Event ID</h1>
+                            <p class="fs-6 text-white">{{eventId}}</p>
+
+                            <h1 class="display-5 fw-bold text-white fs-5">Name</h1>
+                            <p class="fs-6 text-white">{{name}}</p>
+
+                            <h1 class="display-5 fw-bold text-white fs-5">Description</h1>
+                            <p class="fs-6 text-white">{{description}}</p>
+
+                            <h1 class="display-5 fw-bold text-white fs-5">Start Date</h1>
+                            <p class="fs-6 text-white">{{startDateTime}}</p>
+
+                            <h1 class="display-5 fw-bold text-white fs-5">End Date</h1>
+                            <p class="fs-6 text-white">{{endDateTime}}</p>
+
+                            <h1 class="display-5 fw-bold text-white fs-5">Duration</h1>
+                            <p class="fs-6 text-white">{{durationInMinutes | convertDurationFormat}}</p>
+
+                            <h1 class="display-5 fw-bold text-white fs-5">Is Active</h1>
+                            <!-- align-items-center: to align items along the vertical axis at the center -->
+                            <!-- pb-3: bottom padding -->
+                            <div class="d-flex align-items-center pb-3">
+                                <input type="checkbox" [ngModel]="isActive" disabled>
+                                <!-- mb-0: margin bottom, ms-2: margin left -->
+                                <p class="fs-6 text-white mb-0 ms-2">{{isActive == true ? 'Yes' : 'No'}}</p>
+                            </div>
+                            
+                            <h1 class="display-5 fw-bold text-white fs-5">Capacity</h1>
+                            <p class="fs-6 text-white">{{capacity}}</p>
+
+                            <h1 class="display-5 fw-bold text-white fs-5">Tickets Available</h1>
+                            <p class="fs-6 text-white">{{ticketsAvailable}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

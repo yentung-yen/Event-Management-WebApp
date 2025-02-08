@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <title>List Events</title>
+</head>
+
+<body>
+        <div class="album py-5">
+            <div class="container">
+                
+                <h3 class="my-4">Event List</h3>
+
+                <div class="row row-cols-1 g-3">
+                    <div class="col">
+                        <table class="table table-hover table-striped">
+                            <thead class="table-dark">
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Start Date & Time</th>
+                                <th scope="col">End Date & Time</th>
+                                <th scope="col">Duration (mins)</th>
+                                <th scope="col">Is Active</th>
+                                <th scope="col">Capacity</th>
+                                <th scope="col">Tickets Available</th>
+                                <th scope="col">Category ID</th>
+                                <th scope="col">Actions</th>
+                              </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr *ngFor="let event of eventsDB">
+                                    <td>{{event.eventId}}</td>
+                                    <td>{{event.name}}</td>
+                                    <td>{{event.description}}</td>
+                                    <td>{{event.startDateTime}}</td>
+                                    <td>{{event.endDateTime}}</td>
+                                    <td>{{event.durationInMinutes | convertDurationFormat}}</td>
+                                    <!-- checked if event.isActive == true, unchecked if false -->
+                                    <td><input type="checkbox" [ngModel]="event.isActive" disabled></td>
+
+                                    <td>{{event.capacity}}</td>
+                                    <td>{{event.ticketsAvailable}}</td>
+                                    <td>{{event.categories}}</td>
+                                    <td>
+                                        <!-- routerLink links to url path "/display-event/event.eventId" -->
+                                        <button [routerLink]="['/display-event', event.eventId]" type="button" class="btn btn-primary mr-1">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+</body>
+
+</html>

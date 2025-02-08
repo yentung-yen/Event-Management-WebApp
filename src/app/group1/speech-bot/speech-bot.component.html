@@ -1,0 +1,26 @@
+<div class="album py-5">
+    <div class="container">
+        <p class="lead text-body-secondary text-center">Text To Speech</p>
+
+        <div class="row row-cols-1 row-cols-sm-2 g-3">
+            <div class="col mx-auto">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Text to Speech</label>
+                            <input type="text" class="form-control" [(ngModel)]="audio" id="name"
+                                placeholder="Enter text">
+                        </div>
+                        <button type="submit" class="btn btn-success" (click)="submitBtn()" >Convert To Speech</button>
+                        
+                        <div class="container" *ngFor="let audio of audioList">                        
+                              <audio controls src={{audio.audioSpeech}}></audio>
+                            <span class="time-right"></span>
+                          </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

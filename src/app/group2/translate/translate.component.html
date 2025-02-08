@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+		<title>Translator</title>
+	</head>
+
+	<body>
+		<style>
+			textarea {resize: vertical;}
+		</style>
+
+		<main>
+			<div class="album py-5">
+				<div class="container">
+					<h3 class="my-4">Text Translator</h3>
+
+					<div class="row row-cols-1 row-cols-sm-2 g-5">
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+
+									<!-- text to translate -->
+									<div class="mb-3">
+										<label for="textTranslate" class="form-label">Text to Translate:</label>
+										<textarea name="textTranslate" class="form-control" id="textTranslate" rows="7" placeholder="{{ showText == '' ? 'Enter Text' : showText}}" [(ngModel)]="output.inputText" ></textarea>
+									</div>
+
+									<!-- language options -->
+									<div class="mb-3">
+										<label for="language" class="pb-2">Target Language:</label> <br> 
+                                        <select id="language" class="form-control" [(ngModel)]="output.language" name="language">
+                                            <option value="zh">Chinese</option>
+                                            <option value="ko">Korean</option>
+                                            <option value="ms">Malay</option>
+                                        </select>
+									</div>
+
+									<button type="submit" class="btn btn-success" (click)="saveData()">Translate</button>
+									
+								</div>
+							</div>
+						</div>
+
+						<div *ngIf="translated" class="col">
+							<div class="p-4 p-lg-5 bg-dark rounded-3">
+								<div class="m-4 m-lg-5 ">
+		
+									<h1 class="display-5 fw-bold text-white pb-4 text-center">Output</h1>
+									
+									<h1 class="display-5 fw-bold text-white fs-5">Input Text</h1>
+									<p class="fs-6 pb-2 text-white">{{showText}}</p>
+
+									<h1 class="display-5 fw-bold text-white fs-5">Language</h1>
+									<p class="fs-6 pb-2 text-white">{{showLanguage}}</p>
+
+									<h1 class="display-5 fw-bold text-white fs-5">Translated Text</h1>
+									<p class="fs-6 pb-2 text-white">{{showTranslatedText}}</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

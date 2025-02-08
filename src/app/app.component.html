@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/homepage">Home</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <!-- Category Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Category
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/add-category">Add Category</a></li>
+            <li><a class="dropdown-item" routerLink="/list-category">List Category</a></li>
+            <li><a class="dropdown-item" routerLink="/update-category">Update Category</a></li>
+            <li><a class="dropdown-item" routerLink="/delete-category">Delete Category</a></li>
+          </ul>
+        </li>
+
+        <!-- Event Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Events
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/add-event">Add Event</a></li>
+            <li><a class="dropdown-item" routerLink="/list-events">List Events</a></li>
+            <li><a class="dropdown-item" routerLink="/update-event">Update Event</a></li>
+            <li><a class="dropdown-item" routerLink="/delete-event">Delete Event</a></li>
+          </ul>
+        </li>
+
+        <!-- Other Links -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/stats">Statistics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/text-to-speech">Text To Speech</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/operation-counter">Operation Counters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/translator">Translator</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

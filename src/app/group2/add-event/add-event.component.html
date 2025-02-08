@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+		<title>Add Event</title>
+	</head>
+
+	<body>
+		<style>
+			textarea {resize: vertical;}
+            .error-message {
+            color: red;
+            font-size: 12px;
+        }
+		</style>
+
+		<main>
+			<div class="album py-5">
+				<div class="container">
+					<h3 class="my-4">Add New Event</h3>
+
+					<div class="row row-cols-1 row-cols-sm-2 g-5">
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+									
+									<!-- event name -->
+									<div class="mb-3">
+										<label for="name" class="form-label">Event Name</label>
+										<input type="text" name="name" class="form-control" id="name" placeholder="Enter Event name" [(ngModel)]="name" required/>
+									</div>
+
+									<!-- event description -->
+									<div class="mb-3">
+										<label for="description" class="form-label">Event Description</label>
+										<textarea name="description" class="form-control" id="description" rows="4" placeholder="{{ description == '' ? 'Enter Event description' : description}}" [(ngModel)]="description" ></textarea>
+									</div>
+
+									<!-- event start datetime -->
+									<div class="mb-3">
+										<label for="startDateTime" class="form-label">Event Start Date & Time</label>
+										<input type="datetime-local" name="startDateTime" class="form-control" id="startDateTime" step="1" [(ngModel)]="startDateTime" required>
+									</div>
+
+									<!-- event duration (mins) -->
+									<div class="mb-3">
+										<label for="durationInMinutes" class="form-label">Event Duration (minutes)</label>
+										<input 
+											type="number" 
+											min="1" 
+											step="1" 
+											name="durationInMinutes" 
+											class="form-control" 
+											id="durationInMinutes" 
+											[placeholder]="durationPlaceholder" 
+											[(ngModel)]="durationInMinutes" 
+											required
+										/>
+									</div>
+
+									<!-- event isActive -->
+									<div class="mb-3">
+										<label for="isActive"> Event is Active</label> <br> <!--line break-->
+										<select id="isActive" class="form-control" [(ngModel)]="isActive" name="isActive">
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
+                                        </select>
+									</div>
+									
+									<!-- Image -->
+									<div class="mb-3">
+										<label for="image" class="form-label">Image</label>
+										<input type="text" name="image" class="form-control" id="image" placeholder="{{ image == '' ? 'Path to Static Resource' : image}}" [(ngModel)]="image"/>
+									</div>
+
+									<!-- event capacity -->
+									<div class="mb-3">
+										<label for="capacity" class="form-label">Capacity</label>
+										<input type="number" min="1" step="1" name="capacity" class="form-control" id="capacity" [(ngModel)]="capacity"/>
+									</div>
+
+									<!-- event tickets Available -->
+									<div class="mb-3">
+										<label for="ticketsAvailable" class="form-label">Tickets Available</label>
+										<input type="number" min="0" step="1" name="ticketsAvailable" class="form-control" id="ticketsAvailable" placeholder="Optional" [(ngModel)]="ticketsAvailable"/>
+									</div>
+
+									<!-- event category id -->
+									<div class="mb-3">
+										<label for="categories" class="form-label">Event Category ID(s)</label>
+										<input type="text" name="categories" class="form-control" id="categories" placeholder="Enter Event category" [(ngModel)]="categories" required/>
+									</div>
+
+									<button type="submit" class="btn btn-primary" (click)="onSaveEvent()">Submit</button>
+									
+								</div>
+							</div>
+						</div>
+
+						<div class="col">
+							<img src="/map.jpg" class="img-fluid">
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+		<title>Update Category</title>
+	</head>
+
+	<body>
+
+		<main>
+			<div class="album py-5">
+				<div class="container">
+					<h3 class="my-4">Update Category</h3>
+
+					<div class="row row-cols-1 row-cols-sm-2 g-5">
+						<div class="col">
+							<div class="card shadow-sm">
+								<div class="card-body">
+
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Category Name</label>
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="Select Category below to update" [(ngModel)]="updateName" required/>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="capacity" class="form-label">Description</label>
+                                        <input type="text" name="description" class="form-control" id="description" placeholder="Enter in the updated description" [(ngModel)]="updateDesc"/>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success" (click)="categoryUpdate()">Update</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+        <div class="album py-5">
+            <div class="container">
+    
+                <div class="row row-cols-1 g-3">
+                    <div class="col">
+                        <table class="table table-hover table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Created At</th>
+                                <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr *ngFor="let category of catDb">
+                                    <td>{{category.catId}}</td>
+                                    <td>{{category.name | convertUppercase}}</td>
+                                    <td>{{category.description}}</td>
+                                    <td><img [src]="category.image" alt="Category Image" [width]="50" [height]="50"></td>
+                                    <td>{{category.createdAt}}</td>
+                                    <td>
+                                        <button 
+                                            (click)="selectUpdate(category.catId, category.name, category.description)" 
+                                            type="button" 
+                                            class="btn btn-primary mr-1"
+                                        >Select</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+	</body>
+</html>

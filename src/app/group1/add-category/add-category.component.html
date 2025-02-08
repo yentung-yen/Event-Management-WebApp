@@ -1,0 +1,30 @@
+<div class="album py-5">
+    <div class="container">
+        <p class="lead text-body-secondary text-center">Add New Category</p>
+
+        <div class="row row-cols-1 row-cols-sm-2 g-3">
+            <div class="col mx-auto">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" [(ngModel)]="name" class="form-control" id="name"
+                                placeholder="Enter category name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea [(ngModel)]="description" class="form-control" id="description"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image</label>
+                            <input type="text" name="image" class="form-control" id="image" placeholder="{{ image == '' ? 'Path to Static Resource' : image}}" [(ngModel)]="image"/>
+                        </div>
+
+                        <button class="btn btn-success" (click)="saveCategory()">Add Category</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

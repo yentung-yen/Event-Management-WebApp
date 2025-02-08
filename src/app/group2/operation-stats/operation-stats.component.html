@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Operation Counters</title>
+	</head>
+
+	<body>
+
+		<style>
+			h1 {text-align: center; font-size: 40px; background-color: #C1E1C1; padding: 30px; color: #1C3050}
+			div {text-align: center;}
+		</style>
+
+		<div class="rounded">
+			<h1>Operation Counters</h1>
+		</div>
+		
+		<!--Cards for Counters-->
+		<div class="container my-4">
+		    <div class="container">
+                <div class="row justify-content-center text-center">
+
+                <div class="col-md-2 mb-5">
+                    <div class="card mx-auto" style="width: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Records Created</h5>
+                        <p class="card-text">{{recordsCreatedNum}}</p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-5">
+                    <div class="card mx-auto" style="width: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Records Deleted</h5>
+                        <p class="card-text">{{recordsDeletedNum}}</p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 mb-5">
+                    <div class="card mx-auto" style="width: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Records Updated</h5>
+                        <p class="card-text">{{recordsUpdatedNum}}</p>
+                    </div>
+
+                    </div>
+                </div>
+                </div>
+		    </div>
+		</div>
+	
+	</body>
+</html>
