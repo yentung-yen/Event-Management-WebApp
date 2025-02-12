@@ -1,4 +1,4 @@
-//endpoints - designed to receive in json format and send data abck in json format
+//endpoints - designed to receive in json format and send data back in json format
 const express = require("express");
 const categoryCont = require("../controllers/category-controller");
 

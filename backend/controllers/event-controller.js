@@ -112,10 +112,12 @@ function findEndDateTime(startDateTime, duration){
     return `${dayDate}, ${endDateTime}`;
 };
 
-// endpoints
-module.exports = {
-    // insert new event
 
+//===========================================================================================
+//RESTFUL API endpoints 
+module.exports = {
+
+    // insert new event
 /**
  * RESTful API endpoint which sends data in JSON format of new event created 
  * @name createNewEvent
@@ -207,7 +209,9 @@ module.exports = {
         }
 	},
 
-    /**
+
+    // list all events
+/**
  * RESTful API endpoint which gets all event data in JSON format 
  * @name listAllEvents
  * @async
@@ -215,11 +219,11 @@ module.exports = {
  * @param {Object}  - finds all the events including the categoryList array 
  * @return {Promise<String>} - returns the list of all events 
  */
-    // list all events
     listAllEvents: async function (req, res) {
 		let allEvents = await Event.find({}).populate('categoryList').exec();
 		res.status(200).json(allEvents);
 	},
+
 
     // delete event by id
 /**
@@ -278,6 +282,7 @@ module.exports = {
             res.status(400).json({error:"Invalid Data"});
         }
 	},
+
 
     // Update event name and capacity by ID
 /**
@@ -342,7 +347,8 @@ module.exports = {
         }
 	},
 
-    // task 1.4. display event data
+
+    // Display event data
 /**
  * RESTful API endpoint which gets all the data of a single event to display it
  * @name displayEvent

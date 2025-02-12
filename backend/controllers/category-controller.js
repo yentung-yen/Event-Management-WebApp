@@ -3,7 +3,6 @@ const Event = require("../models/event")
 const Operation = require("../models/operations");
 
 
-
 /**
  * Generates the category ID 
  * @function
@@ -55,11 +54,12 @@ function catCreatedAt(){
 
 };
 
+
 //===========================================================================================
 //RESTFUL API endpoints 
-
-//Task 2 - Inserting new Category 
 module.exports = {
+
+    // Inserting new Category 
 /**
  * RESTful API endpoint which sends data in JSON format of new category created 
  * @name createCategory
@@ -99,6 +99,8 @@ module.exports = {
                 res.status(400).json({error: "Invalid Data"} );	
         }
     },
+
+
 /**
  * RESTful API endpoint which sends data in JSON format of new category created 
  * @name getAll
@@ -169,6 +171,8 @@ module.exports = {
            
 
     },
+
+
 /**
  * RESTful API endpoint which sends data in JSON format of new category created 
  * @name deleteCategory
