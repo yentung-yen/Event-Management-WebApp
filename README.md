@@ -24,7 +24,7 @@ This is a Node.js-based web application for event management, featuring API endp
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yentung-yen/Event-Management-App.git
+   git clone https://github.com/yentung-yen/Event-Management-WebApp.git
    cd Event-Management-App
    ```
 
